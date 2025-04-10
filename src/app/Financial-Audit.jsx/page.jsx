@@ -1,8 +1,7 @@
-import Layout from '../components/Layout';
+"use client"
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 
-export default function FinancialAudit() {
+export default function page() {
   const benefits = [
     {
       title: "Financial Transparency",
@@ -36,10 +35,7 @@ export default function FinancialAudit() {
 
   return (
     <>
-      <Head>
         <title>BIZEYE - Financial Audit</title>
-      </Head>
-      <Layout>
         <div className="space-y-4 sm:space-y-8">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -94,7 +90,6 @@ export default function FinancialAudit() {
             </motion.button>
           </div>
         </div>
-      </Layout>
     </>
   );
 }

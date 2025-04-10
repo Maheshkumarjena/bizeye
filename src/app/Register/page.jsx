@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useTheme } from 'next-themes';
 
-export default function Register() {
+export default function page() {
   const { theme } = useTheme();
   const language='english'
 

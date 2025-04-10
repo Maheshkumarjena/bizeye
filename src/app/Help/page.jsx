@@ -1,4 +1,7 @@
-export default function Help() {
+"use client"
+
+import { motion } from "framer-motion";
+export default function page() {
     const supportOptions = [
       {
         name: "Whatsapp",
@@ -16,10 +19,7 @@ export default function Help() {
   
     return (
       <>
-        <Head>
           <title>BIZEYE - Help & Support</title>
-        </Head>
-        <Layout>
           <div className="space-y-4 sm:space-y-6">
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
@@ -58,7 +58,6 @@ export default function Help() {
               </div>
             </motion.div>
           </div>
-        </Layout>
       </>
     );
   }

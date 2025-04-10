@@ -1,8 +1,7 @@
+'use client'
 import { motion } from 'framer-motion';
-import Head from 'next/head';
-import Layout from '@/Components/layout';
 
-export default function Message() {
+export default function page() {
   const messages = [
     {
       id: 1,
@@ -24,10 +23,7 @@ export default function Message() {
 
   return (
     <>
-      <Head>
         <title>BIZEYE - Messages</title>
-      </Head>
-      <Layout>
         <div className="space-y-4 sm:space-y-6">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -57,7 +53,7 @@ export default function Message() {
             </div>
           </motion.div>
         </div>
-      </Layout>
+      
     </>
   );
 }

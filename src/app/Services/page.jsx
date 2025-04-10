@@ -1,8 +1,8 @@
+"use client"
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Layout from '@/Components/layout';
 
-export default function Services() {
+export default function page() {
   const services = [
     "Financial Audit Consulting",
     "Business Growth Audit / Consulting",
@@ -16,7 +16,6 @@ export default function Services() {
       <Head>
         <title>BIZEYE - Services</title>
       </Head>
-      <Layout>
         <div className="space-y-4 sm:space-y-6">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -50,7 +49,6 @@ export default function Services() {
             ))}
           </motion.div>
         </div>
-      </Layout>
     </>
   );
 }

@@ -1,6 +1,5 @@
-import Layout from '../components/Layout';
+"use client"
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 
 export default function Expert() {
   const experts = [
@@ -26,10 +25,7 @@ export default function Expert() {
 
   return (
     <>
-      <Head>
         <title>BIZEYE - Talk To Expert</title>
-      </Head>
-      <Layout>
         <div className="space-y-6">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -91,7 +87,6 @@ export default function Expert() {
             ))}
           </motion.div>
         </div>
-      </Layout>
     </>
   );
 }

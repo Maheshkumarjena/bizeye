@@ -11,6 +11,8 @@ const LineChartCard = ({ labels, data1, data2, label1, label2 }) => {
       chartRef.current.chart.destroy(); // Destroy previous chart if exists
     }
 
+    
+
     chartRef.current.chart = new Chart(ctx, {
       type: 'line',
       data: {
@@ -44,6 +46,7 @@ const LineChartCard = ({ labels, data1, data2, label1, label2 }) => {
         },
       },
     });
+
 
     return () => {
       if (chartRef.current.chart) {

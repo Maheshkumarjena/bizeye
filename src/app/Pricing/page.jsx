@@ -1,8 +1,8 @@
-import Layout from '@/Components/layout';
+"use client"
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 
-export default function Pricing() {
+export default function page() {
   const plans = [
     {
       name: "Free",
@@ -35,7 +35,6 @@ export default function Pricing() {
       <Head>
         <title>BIZEYE - Pricing</title>
       </Head>
-      <Layout>
         <div className="space-y-6">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -83,7 +82,6 @@ export default function Pricing() {
             ))}
           </motion.div>
         </div>
-      </Layout>
     </>
   );
 }

@@ -1,8 +1,7 @@
-import Layout from '../components/Layout';
+"use client"
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 
-export default function Setting() {
+export default function page() {
   const menuItems = [
     "My Account",
     "Privacy & Safety",
@@ -12,10 +11,7 @@ export default function Setting() {
 
   return (
     <>
-      <Head>
         <title>BIZEYE - Settings</title>
-      </Head>
-      <Layout>
         <div className="space-y-4 sm:space-y-6">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
@@ -104,7 +100,6 @@ export default function Setting() {
             </motion.div>
           </div>
         </div>
-      </Layout>
     </>
   );
 }

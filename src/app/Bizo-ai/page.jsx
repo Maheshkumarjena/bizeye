@@ -1,7 +1,6 @@
-import Layout from '../components/Layout';
+"use client"
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import Head from 'next/head';
 
 export default function BizoAI() {
   const [message, setMessage] = useState('');
@@ -39,10 +38,7 @@ export default function BizoAI() {
 
   return (
     <>
-      <Head>
         <title>BIZEYE - BizoAI</title>
-      </Head>
-      <Layout>
         <div className="flex flex-col h-[calc(100vh-120px)]">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -99,7 +95,6 @@ export default function BizoAI() {
             </motion.button>
           </motion.form>
         </div>
-      </Layout>
     </>
   );
 }

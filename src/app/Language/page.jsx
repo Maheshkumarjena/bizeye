@@ -1,16 +1,12 @@
-import Layout from '@/Components/layout';
+"use client"
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 
 export default function Language() {
   const languages = ["English", "Hindi", "Marathi", "Gujarati", "Tamil", "Telugu"];
 
   return (
     <>
-      <Head>
-        <title>BIZEYE - Language Settings</title>
-      </Head>
-      <Layout>
+       <title>BIZEYE - Language Settings</title>
         <div className="space-y-4 sm:space-y-6">
           <div className="flex justify-between items-center">
             <motion.h1 
@@ -84,7 +80,6 @@ export default function Language() {
             </motion.div>
           </div>
         </div>
-      </Layout>
     </>
   );
 }

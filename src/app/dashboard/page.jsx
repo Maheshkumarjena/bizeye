@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import BentoGridThirdDemo from '@/Components/BentoGrid';
 import { FaHome, FaCar, FaSearch, FaBars } from "react-icons/fa";
@@ -20,7 +22,7 @@ const Dashboard = () => {
     <div className='flex w-full flex-col h-screen overflow-scroll bg-gray-300 '>
       
       <Header/>
-     <BentoGridThirdDemo/>
+      <BentoGridThirdDemo/>
       </div>      
 
     </div>

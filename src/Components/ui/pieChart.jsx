@@ -45,7 +45,7 @@ const PieChartCard = ({ percentage, labels, data, colors }) => {
   }, [percentage, labels, data, colors]);
 
   return (
-    <div className="bg-white rounded-lg p-4 w-full max-w-[280px] text-center shadow-md">
+    <div className="bg-white rounded-lg p-4 w-full max-w-[350px] text-center shadow-md">
       <div className="relative inline-flex items-center justify-center mb-4">
         <canvas ref={chartRef} className="w-24 h-24" />
         <div className="absolute font-bold text-xl">

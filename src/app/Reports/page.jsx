@@ -1,8 +1,8 @@
+"use client"
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Layout from '@/Components/layout';
 
-export default function Reports() {
+export default function page() {
   const reports = [
     {
       name: "Tax Reports April 2025",
@@ -46,7 +46,6 @@ export default function Reports() {
       <Head>
         <title>BIZEYE - Reports</title>
       </Head>
-      <Layout>
         <div className="space-y-4 sm:space-y-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <motion.h1 
@@ -126,7 +125,7 @@ export default function Reports() {
             </div>
           </motion.div>
         </div>
-      </Layout>
+      
     </>
   );
 }

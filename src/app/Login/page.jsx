@@ -2,16 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Head from 'next/head';
 
-export default function Login() {
+export default function page() {
   const language = '';
 
   return (
     <>
-      <Head>
         <title>BIZEYE - {language === 'hindi' ? 'लॉगिन' : 'Login'}</title>
-      </Head>
 
       <div
         className="min-h-screen flex items-center justify-center p-4"

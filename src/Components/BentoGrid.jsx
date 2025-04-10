@@ -30,7 +30,7 @@ export default function BentoGridThirdDemo() {
 
 
   return (
-    <BentoGrid className="max-w-full gap-[2vw] p-4 mx-auto mx-auto grid-cols-1  md:grid-cols-3 gap-4 md:auto-rows-[23rem]  sm:grid-cols-2 ">
+    <BentoGrid className="max-w-full gap-[2vw] p-4 mx-auto mx-auto grid-cols-1  md:grid-cols-3 gap-4 md:auto-rows-[23rem] h-[100px] min-h-fit  sm:grid-cols-2 ">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -65,7 +65,7 @@ const items = [
     ),
     header: (
       // profit and loss
-      <div className="bg-[#282828] text-white rounded-lg p-4 w-full max-w-[350px] text-left">
+      <div className="bg-[#282828]  text-white rounded-lg p-4 w-full max-w-[350px] text-left">
       <div className="flex items-center mb-4">
         <div className="w-10 h-10 bg-white rounded-lg mr-3 flex justify-center items-center text-black font-bold text-lg">
           M
@@ -97,9 +97,11 @@ const items = [
         </div>
       </div>
     </div>),
-    className: "md:col-span-1",
+    className: "md:col-span-1 flex flex-col items-center",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
+
+
   {
     title: "Automated Proofreading",
     description: (
@@ -109,8 +111,8 @@ const items = [
     ),
     header: (
       // recommendation
-      <div className="bg-white rounded-lg p-4 w-full max-w-[250px] text-center shadow-md">
-      <div className="flex items-center justify-center mb-4">
+      <div className="bg-gray-300 rounded-lg p-4 w-full  max-w-[350px] text-center shadow-md">
+      <div className="flex items-center w-full justify-center mb-4">
         <div className="w-10 h-10 bg-gray-100 rounded-lg flex justify-center items-center mr-2">
           <LightbulbIcon className="text-black" />
         </div>
@@ -127,9 +129,10 @@ const items = [
     </div>
 
     ) ,
-    className: "md:col-span-1",
+    className: "md:col-span-1 flex flex-col items-center",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
+
   {
     title: "Contextual Suggestions",
     description: (
@@ -139,7 +142,7 @@ const items = [
     ),
     header: (
     // Bussiness growth 
-    <div className="bg-white rounded-lg p-4 w-full max-w-[280px] text-center shadow-md">
+    <div className="bg-white rounded-lg p-4 w-full max-w-[350px] text-center shadow-md">
     <div className="flex items-center justify-center mb-4">
       <div className="w-10 h-10 bg-gray-100 rounded-lg flex justify-center items-center mr-2">
         <TrendingUpIcon className="text-black transform rotate-45" /> {/* Rotate the icon */}
@@ -167,7 +170,7 @@ const items = [
     </div>
   </div>
     ),
-    className: "md:col-span-1",
+    className: "md:col-span-1 flex flex-col items-center",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   
@@ -181,9 +184,10 @@ const items = [
     ),
     header:     <PieChartCard percentage={percentage} labels={labels} data={data} colors={colors} />
 ,
-    className: "md:col-span-1",
+    className: "md:col-span-1 flex flex-col items-center",
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
+  
   {
     title: "Sentiment Analysis",
     description: (
@@ -193,7 +197,7 @@ const items = [
     ),
     header:     <LineChartCard labels={LineChartlabels} data1={data1} data2={data2} label1={label1} label2={label2} />
     ,
-    className: "  sm:col-span-2",
+    className: "  sm:col-span-2 flex flex-col items-start min-h-fit",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 ];
