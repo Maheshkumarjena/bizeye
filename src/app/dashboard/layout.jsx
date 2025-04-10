@@ -3,7 +3,7 @@
 import React from 'react';
 import { FaHome, FaCar, FaSearch, FaBars } from "react-icons/fa";
 import TemporaryDrawer from '@/Components/Sidebar';
-import Header from '@/Components/ui/DashboardHeader';
+import Header from '@/Components/DashboardHeader';
 
 const DashboardLayout = ({ children }) => {
   return (
