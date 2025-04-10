@@ -12,10 +12,25 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { Typography, Box } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import PieChartCard from "./ui/pieChart";
+import LineChartCard from "./ui/LineChart";
+
+// import Box from "@mui/material";
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+
 
 export default function BentoGridThirdDemo() {
+
+
+
+
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+    <BentoGrid className="max-w-full gap-[2vw] p-4 mx-auto mx-auto grid-cols-1  md:grid-cols-3 gap-4 md:auto-rows-[23rem]  sm:grid-cols-2 ">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -29,272 +44,17 @@ export default function BentoGridThirdDemo() {
   );
 }
 
-const SkeletonOne = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
+const percentage = 78;
+  const labels = ['Tax', 'Operations', 'Marketing', 'Cash Flow'];
+  const data = [20, 30, 15, 35];
+  const colors = ['black', 'gray', 'lightgray', 'silver'];
 
-  return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black">
-        <div
-          className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-        <div
-          className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-      </motion.div>
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black">
-        <div
-          className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-      </motion.div>
-    </motion.div>
-  );
-};
-const SkeletonTwo = () => {
-  const variants = {
-    initial: {
-      width: 0,
-    },
-    animate: {
-      width: "100%",
-      transition: {
-        duration: 0.2,
-      },
-    },
-    hover: {
-      width: ["0%", "100%"],
-      transition: {
-        duration: 2,
-      },
-    },
-  };
-  const arr = new Array(6).fill(0);
-  const [maxWidth, setMaxWidth] = useState('0%');
+  const LineChartlabels = ['1', '2', '3', '4', '5'];
+  const data1 = [80, 10, 50, 10, 70];
+  const data2 = [75, 20, 65, 40, 90];
+  const label1 = '1st W';
+  const label2 = '2nd W';
 
-  useEffect(() => {
-    const randomWidth = `${Math.random() * 100}%`;
-    setMaxWidth(randomWidth);
-  }, []);
-
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
-      {arr.map((_, i) => (
-        <motion.div
-          key={"skelenton-two" + i}
-          variants={variants}
-          style={{
-            maxWidth: maxWidth,
-          }}
-          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"></motion.div>
-      ))}
-    </motion.div>
-  );
-};
-const SkeletonThree = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}>
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
-    </motion.div>
-  );
-};
-const SkeletonFour = () => {
-  const first = {
-    initial: {
-      x: 20,
-      rotate: -5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
-  const second = {
-    initial: {
-      x: -20,
-      rotate: 5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2">
-      <motion.div
-        variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10" />
-        <p
-          className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
-        </p>
-        <p
-          className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
-        </p>
-      </motion.div>
-      <motion.div
-        className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10" />
-        <p
-          className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
-        </p>
-        <p
-          className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
-        </p>
-      </motion.div>
-      <motion.div
-        variants={second}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10" />
-        <p
-          className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
-        </p>
-        <p
-          className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
-        </p>
-      </motion.div>
-    </motion.div>
-  );
-};
-const SkeletonFive = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2">
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10" />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black">
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div
-          className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-      </motion.div>
-    </motion.div>
-  );
-};
 const items = [
   {
     title: "AI Content Generation",
@@ -303,7 +63,40 @@ const items = [
         Experience the power of AI in generating unique content.
       </span>
     ),
-    header: <SkeletonOne />,
+    header: (
+      // profit and loss
+      <div className="bg-[#282828] text-white rounded-lg p-4 w-full max-w-[350px] text-left">
+      <div className="flex items-center mb-4">
+        <div className="w-10 h-10 bg-white rounded-lg mr-3 flex justify-center items-center text-black font-bold text-lg">
+          M
+        </div>
+        <div>
+          <Typography variant="subtitle1" className="text-sm md:text-base">
+            Total Business
+          </Typography>
+          <Typography variant="caption" className="text-xs">
+            Last Months
+          </Typography>
+        </div>
+      </div>
+      <Typography variant="h4" className="font-bold mb-4 text-2xl md:text-3xl lg:text-4xl">
+        ₹ 9,328.55
+      </Typography>
+      <div className="flex justify-between">
+        <div className="flex items-center">
+          <ArrowUpwardIcon className="text-green-500 text-sm md:text-base" />
+          <Typography variant="body2" className="ml-1 text-sm md:text-base">
+            1,50,265
+          </Typography>
+        </div>
+        <div className="flex items-center">
+          <ArrowDownwardIcon className="text-red-500 text-sm md:text-base" />
+          <Typography variant="body2" className="ml-1 text-sm md:text-base">
+            1,40,936
+          </Typography>
+        </div>
+      </div>
+    </div>),
     className: "md:col-span-1",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
@@ -314,7 +107,26 @@ const items = [
         Let AI handle the proofreading of your documents.
       </span>
     ),
-    header: <SkeletonTwo />,
+    header: (
+      // recommendation
+      <div className="bg-white rounded-lg p-4 w-full max-w-[250px] text-center shadow-md">
+      <div className="flex items-center justify-center mb-4">
+        <div className="w-10 h-10 bg-gray-100 rounded-lg flex justify-center items-center mr-2">
+          <LightbulbIcon className="text-black" />
+        </div>
+      </div>
+      <Typography variant="h6" className="font-bold text-lg mb-2">
+        Recommendation
+      </Typography>
+      <Typography variant="h2" className="font-bold text-4xl mb-4">
+        5
+      </Typography>
+      <Typography variant="body2" className="text-blue-600 font-semibold">
+        Check Recommendation
+      </Typography>
+    </div>
+
+    ) ,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
@@ -325,21 +137,40 @@ const items = [
         Get AI-powered suggestions based on your writing context.
       </span>
     ),
-    header: <SkeletonThree />,
+    header: (
+    // Bussiness growth 
+    <div className="bg-white rounded-lg p-4 w-full max-w-[280px] text-center shadow-md">
+    <div className="flex items-center justify-center mb-4">
+      <div className="w-10 h-10 bg-gray-100 rounded-lg flex justify-center items-center mr-2">
+        <TrendingUpIcon className="text-black transform rotate-45" /> {/* Rotate the icon */}
+      </div>
+    </div>
+    <Typography variant="h6" className="font-bold text-lg mb-2">
+      Business Growth
+    </Typography>
+    <Typography variant="h4" className="font-bold text-3xl mb-4 text-orange-500">
+      Good
+    </Typography>
+    <div className="flex justify-around">
+      <div className="flex items-center">
+        <TrendingDownIcon className="text-red-500" />
+        <Typography variant="body2" className="ml-1 text-sm">
+          -12.7%
+        </Typography>
+      </div>
+      <div className="flex items-center">
+        <TrendingUpIcon className="text-green-500" />
+        <Typography variant="body2" className="ml-1 text-sm">
+          25.0%
+        </Typography>
+      </div>
+    </div>
+  </div>
+    ),
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
-  {
-    title: "Sentiment Analysis",
-    description: (
-      <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
-      </span>
-    ),
-    header: <SkeletonFour />,
-    className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
+  
 
   {
     title: "Text Summarization",
@@ -348,8 +179,21 @@ const items = [
         Summarize your lengthy documents with AI technology.
       </span>
     ),
-    header: <SkeletonFive />,
+    header:     <PieChartCard percentage={percentage} labels={labels} data={data} colors={colors} />
+,
     className: "md:col-span-1",
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Sentiment Analysis",
+    description: (
+      <span className="text-sm">
+        Understand the sentiment of your text with AI analysis.
+      </span>
+    ),
+    header:     <LineChartCard labels={LineChartlabels} data1={data1} data2={data2} label1={label1} label2={label2} />
+    ,
+    className: "  sm:col-span-2",
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 ];
