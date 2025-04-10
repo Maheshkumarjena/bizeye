@@ -4,6 +4,15 @@ import { Typography, InputBase, Badge, Avatar, IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 const Header = () => {
   return (
@@ -36,10 +45,30 @@ const Header = () => {
         </IconButton>
         <div className="flex items-center space-x-2">
           <Avatar alt="Yogesh Gore" src="/yogesh-gore.jpg" /> {/* Replace with your image path */}
-          <Typography variant="body2" className="font-semibold hidden sm:block">
-            Yogesh Gore
-          </Typography>
-          <ArrowDropDownIcon />
+          <DropdownMenu>
+  <DropdownMenuTrigger>
+    
+    <div className='flex flex-row '>
+
+    <p>
+      Yogesh Gore
+      
+      </p>
+      <ArrowDropDownIcon />
+    </div>
+
+
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+
         </div>
       </div>
     </div>
